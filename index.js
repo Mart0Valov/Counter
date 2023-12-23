@@ -3,20 +3,23 @@ const value = document.getElementById('value');
 const btns = document.querySelectorAll('input');
 
 
-const increase = (target) => {
-    target.value = Number(target.value) + 1;
+const action = {
+    Increase: (target) => {
+        target.textContent = +target.textContent + 1;
+    },
+    
+    Reset: (target) => {
+        target.textContent = 0;
+    },
+    
+    Decrease: (target) => {
+        target.textContent = +target.textContent - 1;
+    }
 }
 
-const reset = (target) => {
-    target.value = 0;
-}
-
-const decrease = (target) => {
-    target.value = Number(target.value) - 1;
-}
 
 function onClick(ev) {
-
+    action[ev.target.value](value);
 }
 
 btns.forEach(btn => {
