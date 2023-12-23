@@ -4,15 +4,28 @@ const btns = document.querySelectorAll('input');
 
 
 const action = {
-    Increase: (target) => {
-        target.textContent = +target.textContent + 1;
+    Increase: (target, colour = 'green') => {
+        const currentValue = +target.textContent;
+        if (currentValue + 1 === 0) {
+            target.style.color = 'black';
+        } else if (currentValue >= 0) {
+            target.style.color = colour;
+        }
+        target.textContent = currentValue + 1;
     },
-    
-    Reset: (target) => {
+
+    Reset: (target, colour = 'black') => {
+        target.style.color = colour;
         target.textContent = 0;
     },
-    
-    Decrease: (target) => {
+
+    Decrease: (target, colour = 'red') => {
+        const currentValue = +target.textContent;
+        if (currentValue - 1 === 0) {
+            target.style.color = 'black';
+        } else if (currentValue <= 0) {
+            target.style.color = colour;
+        }
         target.textContent = +target.textContent - 1;
     }
 }
