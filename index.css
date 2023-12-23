@@ -15,5 +15,11 @@
     font-size: 2em;
 }
 
-
+#btn-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 20em;
+    margin-top: 1em;
+}
 
