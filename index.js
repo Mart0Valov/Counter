@@ -1,6 +1,9 @@
 // selecting all the needed elements
 const value = document.getElementById('value');
 const btns = document.querySelectorAll('input');
+// TODO: Implemening fature where the user can set his/hers 
+// colours for increasing, reseting or decreasing the value
+
 
 
 const action = {
